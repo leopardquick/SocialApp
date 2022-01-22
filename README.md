@@ -1,4 +1,4 @@
-# socil
+# social
 
 A new Flutter application.
 
