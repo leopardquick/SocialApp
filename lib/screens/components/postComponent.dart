@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movie/models/post.dart';
 import 'package:movie/screen_size.dart';
+import 'package:movie/screens/individual_screen.dart';
 
 class PostComponent extends StatelessWidget {
 
@@ -15,6 +16,9 @@ class PostComponent extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(SizeConfig.safeBlockHorizontal*2),
       child: GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>CommentScreen(post: postCom,)));
+        },
         child: Card(
           elevation: 23,
           child: Padding(
@@ -31,10 +35,18 @@ class PostComponent extends StatelessWidget {
                       width: SizeConfig.safeBlockHorizontal* 2,
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(postCom.getFullname()),
+                        Text(postCom.getFullname(),style: TextStyle(
+                            fontSize: SizeConfig.safeBlockHorizontal*4
+                        ),),
+                        SizedBox(height: SizeConfig.safeBlockVertical*.5,),
+                        Text(postCom.publishDate,style: TextStyle(
+                          color: Colors.black26,
+                          fontSize: SizeConfig.safeBlockHorizontal*3,
+                        ),),
                       ],
-                    )
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -59,7 +71,10 @@ class PostComponent extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(postCom.text),
+                          Text(postCom.text ,style:TextStyle(
+                            fontSize: SizeConfig.safeBlockHorizontal*4,
+                            color: Colors.black54
+                          ),),
                           SizedBox(
                             height: SizeConfig.safeBlockVertical* 2,
                           ),

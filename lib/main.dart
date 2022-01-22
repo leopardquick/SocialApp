@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie/screens/individual_screen.dart';
 import 'package:movie/screens/login_screen.dart';
 import 'package:movie/screens/chat_screen.dart';
 
@@ -14,7 +15,7 @@ class MovieApp extends StatelessWidget {
       initialRoute: LoginScreen.id,
       routes: {
         LoginScreen.id : (context) => LoginScreen(),
-        ChatScreen.id : (context) => ChatScreen()
+        ChatScreen.id : (context) => ChatScreen(),
       },
     );
   }

@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: EdgeInsets.symmetric(horizontal: SizeConfig.safeBlockHorizontal*18),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -57,10 +57,11 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             child: Text(error, textAlign: TextAlign.center, style: TextStyle(
               color: Colors.red,
+              fontSize: SizeConfig.safeBlockHorizontal*3
             ))
           ),
             SizedBox(
-              height: 48.0,
+              height: SizeConfig.safeBlockVertical*5,
             ),
             TextField(
               textAlign: TextAlign.center,
@@ -71,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration: kTextFieldDecoration.copyWith(hintText: 'Enter your email'),
             ),
             SizedBox(
-              height: 8.0,
+              height: SizeConfig.safeBlockVertical*3,
             ),
             TextField(
               textAlign: TextAlign.center,

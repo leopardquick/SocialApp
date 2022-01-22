@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie/screen_size.dart';
 
 
 class RoundedButton extends StatelessWidget {
@@ -8,8 +9,9 @@ class RoundedButton extends StatelessWidget {
   final Function onClick;
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.0),
+      padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical*2),
       child: Material(
         elevation: 5.0,
         color: roundColor,

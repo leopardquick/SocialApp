@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:movie/constants.dart';
 import 'package:movie/models/post.dart';
 import 'package:movie/screen_size.dart';
+import 'package:movie/screens/login_screen.dart';
 import 'package:movie/utilis/network.dart';
 import 'package:movie/utilis/user_auth.dart';
 import 'package:movie/screens/components/postComponent.dart';
@@ -38,17 +39,17 @@ class _ChatScreenState extends State<ChatScreen> {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
-        leading: null,
+        leading: Text(''),
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.close),
               onPressed: () async{
                 UserAuth.userLogOut();
-                Navigator.pop(context);
+                Navigator.pushNamed(context, LoginScreen.id);
 
               }),
         ],
-        title: Text('⚡️movie'),
+        title: Text('social'),
         backgroundColor: Colors.lightBlueAccent,
       ),
       body: SafeArea(
